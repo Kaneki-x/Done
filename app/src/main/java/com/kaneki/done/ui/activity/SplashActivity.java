@@ -3,6 +3,12 @@ package com.kaneki.done.ui.activity;
 import com.kaneki.done.R;
 import com.kaneki.done.base.BaseActivity;
 
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+
 /**
  * @author yueqian
  * @Desctription
@@ -28,7 +34,12 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initViews() {
+        Observable.timer(3, TimeUnit.SECONDS).subscribe(new Consumer<Long>() {
+            @Override
+            public void accept(@NonNull Long aLong) throws Exception {
 
+            }
+        });
     }
 
     @Override
