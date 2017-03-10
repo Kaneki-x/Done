@@ -2,6 +2,7 @@ package com.kaneki.done.ui.activity;
 
 import com.kaneki.done.R;
 import com.kaneki.done.base.BaseActivity;
+import com.kaneki.done.manager.ActivitySkipManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +38,7 @@ public class SplashActivity extends BaseActivity {
         Observable.timer(3, TimeUnit.SECONDS).subscribe(new Consumer<Long>() {
             @Override
             public void accept(@NonNull Long aLong) throws Exception {
-
+                ActivitySkipManager.getManager().skipActivity(SplashActivity.this, MainActivity.class);
             }
         });
     }
