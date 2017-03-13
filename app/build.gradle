@@ -42,4 +42,6 @@ dependencies {
     compile 'com.orhanobut:logger:1.15'
     //事件总线
     compile 'org.greenrobot:eventbus:3.0.0'
+    //RecyclerView
+    compile 'com.android.support:recyclerview-v7:25.2.0'
 }
