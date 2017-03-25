@@ -47,4 +47,9 @@ public class SplashActivity extends BaseActivity {
     public void setListeners() {
 
     }
+
+    @Override
+    public void onEvent(Object object) {
+
+    }
 }

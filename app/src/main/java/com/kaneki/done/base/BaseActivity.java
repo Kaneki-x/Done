@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * @author yueqian
@@ -50,4 +52,9 @@ public abstract class BaseActivity extends Activity {
     public abstract void initViews();
 
     public abstract void setListeners();
+
+    @Subscribe(threadMode = ThreadMode.MAIN) //在ui线程执行
+    public void onEvent(Object object) {
+
+    }
 }
