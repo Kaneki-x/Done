@@ -1,9 +1,15 @@
 package com.kaneki.done.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.kaneki.done.R;
+import com.kaneki.done.model.entity.DoneEntity;
 import com.kaneki.done.model.holder.DoneListHolder;
+
+import java.util.List;
 
 /**
  * @author yueqian
@@ -11,23 +17,41 @@ import com.kaneki.done.model.holder.DoneListHolder;
  * @date 2017/3/25
  * @email yueqian@mogujie.com
  */
-public class DoneListAdapter extends RecyclerView.Adapter<DoneListHolder> {
+public class DoneListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private static final int TYPE_DONE_TITLE = 0;
+    private static final int TYPE_DONE_ITEM = 1;
 
-    public DoneListAdapter() {
+    private DoneEntity[] datas;
+    private LayoutInflater layoutInflater;
+
+    public DoneListAdapter(Context context, List<DoneEntity> doneEntityList) {
+        this.layoutInflater = LayoutInflater.from(context);
+        this.datas = doneEntityList.toArray(new DoneEntity[doneEntityList.size()]);
     }
 
     @Override
-    public DoneListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+    public int getItemViewType(int position) {
+        if (position == 0)
+            return TYPE_DONE_TITLE;
+        else
+            return TYPE_DONE_ITEM;
     }
 
     @Override
-    public void onBindViewHolder(DoneListHolder holder, int position) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == TYPE_DONE_TITLE)
+            return new RecyclerView.ViewHolder(layoutInflater.inflate(R.layout.item_main_list_title, parent, false)){};
+        else
+            return new DoneListHolder(layoutInflater.inflate(R.layout.item_main_list_title, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return datas.length + 1;
     }
 }
