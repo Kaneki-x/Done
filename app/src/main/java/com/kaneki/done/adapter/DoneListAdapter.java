@@ -47,7 +47,8 @@ public class DoneListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+        if (position > 0)
+            ((DoneListHolder) holder).bindView(datas[position - 1]);
     }
 
     @Override
