@@ -18,7 +18,7 @@ public class DoneEntity implements Parcelable {
     private int achievePoint;
     private int targetPoints;
     private int currentPoints;
-    private String color;
+    private int color;
 
     public long getId() {
         return id;
@@ -68,14 +68,13 @@ public class DoneEntity implements Parcelable {
         this.currentPoints = currentPoints;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
-
 
     @Override
     public int describeContents() {
@@ -90,7 +89,7 @@ public class DoneEntity implements Parcelable {
         dest.writeInt(this.achievePoint);
         dest.writeInt(this.targetPoints);
         dest.writeInt(this.currentPoints);
-        dest.writeString(this.color);
+        dest.writeInt(this.color);
     }
 
     public DoneEntity() {
@@ -103,7 +102,7 @@ public class DoneEntity implements Parcelable {
         this.achievePoint = in.readInt();
         this.targetPoints = in.readInt();
         this.currentPoints = in.readInt();
-        this.color = in.readString();
+        this.color = in.readInt();
     }
 
     public static final Parcelable.Creator<DoneEntity> CREATOR = new Parcelable.Creator<DoneEntity>() {
