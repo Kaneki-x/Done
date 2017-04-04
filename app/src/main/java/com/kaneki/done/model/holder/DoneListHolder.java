@@ -1,13 +1,15 @@
 package com.kaneki.done.model.holder;
 
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.kaneki.done.R;
+import com.kaneki.done.app.DoneApplication;
 import com.kaneki.done.model.entity.DoneEntity;
+
+import java.util.Locale;
 
 /**
  * @author yueqian
@@ -33,7 +35,10 @@ public class DoneListHolder extends RecyclerView.ViewHolder {
 
     public void bindView(DoneEntity doneEntity) {
         tvName.setText(doneEntity.getTitle());
-        roundCornerProgressBar.setProgressColor(Color.parseColor(doneEntity.getColor()));
-        tvAchievePoints.setText(doneEntity.getAchievePoint());
+        roundCornerProgressBar.setProgressColor(doneEntity.getColor());
+        roundCornerProgressBar.setMax(doneEntity.getTargetPoints());
+        roundCornerProgressBar.setProgress(doneEntity.getCurrentPoints());
+        tvDetail.setText("每天: " + doneEntity.getCurrentPoints() + " / " + doneEntity.getTargetPoints());
+        tvAchievePoints.setText(String.valueOf(doneEntity.getAchievePoint()));
     }
 }

@@ -3,5 +3,5 @@
     <color name="color_transparent">#00000000</color>
     <color name="color_bg_default">#ffffff</color>
     <color name="color_bg_done_item">#e3e3e3</color>
-    <color name="color_text_default">#333333</color>
+    <color name="color_text_default">#000000</color>
 </resources>

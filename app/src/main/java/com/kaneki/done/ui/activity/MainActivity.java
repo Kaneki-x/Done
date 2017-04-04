@@ -33,9 +33,18 @@ public class MainActivity extends BaseActivity {
         doneEntityArrayList = new ArrayList<>();
         DoneEntity doneEntity = new DoneEntity();
         doneEntity.setColor(Color.RED);
-        doneEntity.setTitle("test");
+        doneEntity.setTitle("机器学习");
         doneEntity.setAchievePoint(1);
         doneEntity.setCurrentPoints(5);
+        doneEntity.setTargetPoints(10);
+
+        doneEntityArrayList.add(doneEntity);
+
+        doneEntity = new DoneEntity();
+        doneEntity.setColor(Color.YELLOW);
+        doneEntity.setTitle("喝酒");
+        doneEntity.setAchievePoint(2);
+        doneEntity.setCurrentPoints(0);
         doneEntity.setTargetPoints(10);
 
         doneEntityArrayList.add(doneEntity);

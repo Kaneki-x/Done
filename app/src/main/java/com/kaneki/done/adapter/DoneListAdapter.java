@@ -42,7 +42,7 @@ public class DoneListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (viewType == TYPE_DONE_TITLE)
             return new RecyclerView.ViewHolder(layoutInflater.inflate(R.layout.item_main_list_title, parent, false)){};
         else
-            return new DoneListHolder(layoutInflater.inflate(R.layout.item_main_list_title, parent, false));
+            return new DoneListHolder(layoutInflater.inflate(R.layout.item_main_list_done, parent, false));
     }
 
     @Override
