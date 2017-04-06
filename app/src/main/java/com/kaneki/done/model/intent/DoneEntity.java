@@ -1,4 +1,4 @@
-package com.kaneki.done.model.entity;
+package com.kaneki.done.model.intent;
 
 import android.os.Parcel;
 import android.os.Parcelable;

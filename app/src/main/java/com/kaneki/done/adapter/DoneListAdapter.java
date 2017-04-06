@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.kaneki.done.R;
-import com.kaneki.done.model.entity.DoneEntity;
+import com.kaneki.done.model.intent.DoneEntity;
 import com.kaneki.done.model.holder.DoneListHolder;
 
 import java.util.List;

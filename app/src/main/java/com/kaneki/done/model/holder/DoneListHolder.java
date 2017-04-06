@@ -6,10 +6,7 @@ import android.widget.TextView;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.kaneki.done.R;
-import com.kaneki.done.app.DoneApplication;
-import com.kaneki.done.model.entity.DoneEntity;
-
-import java.util.Locale;
+import com.kaneki.done.model.intent.DoneEntity;
 
 /**
  * @author yueqian

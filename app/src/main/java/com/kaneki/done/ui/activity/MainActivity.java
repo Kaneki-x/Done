@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.kaneki.done.R;
 import com.kaneki.done.adapter.DoneListAdapter;
 import com.kaneki.done.base.BaseActivity;
-import com.kaneki.done.model.entity.DoneEntity;
+import com.kaneki.done.model.intent.DoneEntity;
 
 import java.util.ArrayList;
 
