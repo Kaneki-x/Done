@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.kaneki.done.R;
 import com.kaneki.done.adapter.DoneListAdapter;
 import com.kaneki.done.base.BaseActivity;
-import com.kaneki.done.model.intent.DoneEntity;
+import com.kaneki.done.model.intent.Done;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity {
     private RecyclerView doneRecyclerView;
 
     private DoneListAdapter doneListAdapter;
-    private ArrayList<DoneEntity> doneEntityArrayList;
+    private ArrayList<Done> doneArrayList;
 
     @Override
     public int getContentView() {
@@ -30,29 +30,29 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initDatas() {
-        doneEntityArrayList = new ArrayList<>();
-        DoneEntity doneEntity = new DoneEntity();
-        doneEntity.setColor(Color.RED);
-        doneEntity.setTitle("机器学习");
-        doneEntity.setAchievePoint(1);
-        doneEntity.setCurrentPoints(5);
-        doneEntity.setTargetPoints(10);
+        doneArrayList = new ArrayList<>();
+        Done done = new Done();
+        done.setColor(Color.RED);
+        done.setTitle("机器学习");
+        done.setAchievePoint(1);
+        done.setCurrentPoints(5);
+        done.setTargetPoints(10);
 
-        doneEntityArrayList.add(doneEntity);
+        doneArrayList.add(done);
 
-        doneEntity = new DoneEntity();
-        doneEntity.setColor(Color.YELLOW);
-        doneEntity.setTitle("喝酒");
-        doneEntity.setAchievePoint(2);
-        doneEntity.setCurrentPoints(0);
-        doneEntity.setTargetPoints(10);
+        done = new Done();
+        done.setColor(Color.YELLOW);
+        done.setTitle("喝酒");
+        done.setAchievePoint(2);
+        done.setCurrentPoints(0);
+        done.setTargetPoints(10);
 
-        doneEntityArrayList.add(doneEntity);
+        doneArrayList.add(done);
     }
 
     @Override
     public void initViews() {
-        doneListAdapter = new DoneListAdapter(this, doneEntityArrayList);
+        doneListAdapter = new DoneListAdapter(this, doneArrayList);
 
         doneRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         doneRecyclerView.setAdapter(doneListAdapter);

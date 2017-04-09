@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.kaneki.done.R;
-import com.kaneki.done.model.intent.DoneEntity;
+import com.kaneki.done.model.intent.Done;
 
 /**
  * @author yueqian
@@ -30,12 +30,12 @@ public class DoneListHolder extends RecyclerView.ViewHolder {
         tvAchievePoints = (TextView) itemView.findViewById(R.id.tv_done_achieve_point);
     }
 
-    public void bindView(DoneEntity doneEntity) {
-        tvName.setText(doneEntity.getTitle());
-        roundCornerProgressBar.setProgressColor(doneEntity.getColor());
-        roundCornerProgressBar.setMax(doneEntity.getTargetPoints());
-        roundCornerProgressBar.setProgress(doneEntity.getCurrentPoints());
-        tvDetail.setText("每天: " + doneEntity.getCurrentPoints() + " / " + doneEntity.getTargetPoints());
-        tvAchievePoints.setText(String.valueOf(doneEntity.getAchievePoint()));
+    public void bindView(Done done) {
+        tvName.setText(done.getTitle());
+        roundCornerProgressBar.setProgressColor(done.getColor());
+        roundCornerProgressBar.setMax(done.getTargetPoints());
+        roundCornerProgressBar.setProgress(done.getCurrentPoints());
+        tvDetail.setText("每天: " + done.getCurrentPoints() + " / " + done.getTargetPoints());
+        tvAchievePoints.setText(String.valueOf(done.getAchievePoint()));
     }
 }

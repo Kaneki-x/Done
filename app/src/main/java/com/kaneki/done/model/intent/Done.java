@@ -9,7 +9,7 @@ import android.os.Parcelable;
  * @date 2017/4/1
  * @email yueqian@mogujie.com
  */
-public class DoneEntity implements Parcelable {
+public class Done implements Parcelable {
 
     private long id;
     private String title;
@@ -91,10 +91,10 @@ public class DoneEntity implements Parcelable {
         dest.writeInt(this.color);
     }
 
-    public DoneEntity() {
+    public Done() {
     }
 
-    protected DoneEntity(Parcel in) {
+    protected Done(Parcel in) {
         this.id = in.readLong();
         this.title = in.readString();
         this.targetType = in.readInt();
@@ -104,15 +104,15 @@ public class DoneEntity implements Parcelable {
         this.color = in.readInt();
     }
 
-    public static final Parcelable.Creator<DoneEntity> CREATOR = new Parcelable.Creator<DoneEntity>() {
+    public static final Parcelable.Creator<Done> CREATOR = new Parcelable.Creator<Done>() {
         @Override
-        public DoneEntity createFromParcel(Parcel source) {
-            return new DoneEntity(source);
+        public Done createFromParcel(Parcel source) {
+            return new Done(source);
         }
 
         @Override
-        public DoneEntity[] newArray(int size) {
-            return new DoneEntity[size];
+        public Done[] newArray(int size) {
+            return new Done[size];
         }
     };
 }

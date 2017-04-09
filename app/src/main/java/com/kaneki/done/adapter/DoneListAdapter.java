@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.kaneki.done.R;
-import com.kaneki.done.model.intent.DoneEntity;
+import com.kaneki.done.model.intent.Done;
 import com.kaneki.done.model.holder.DoneListHolder;
 
 import java.util.List;
@@ -21,12 +21,12 @@ public class DoneListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int TYPE_DONE_TITLE = 0;
     private static final int TYPE_DONE_ITEM = 1;
 
-    private DoneEntity[] datas;
+    private Done[] datas;
     private LayoutInflater layoutInflater;
 
-    public DoneListAdapter(Context context, List<DoneEntity> doneEntityList) {
+    public DoneListAdapter(Context context, List<Done> doneList) {
         this.layoutInflater = LayoutInflater.from(context);
-        this.datas = doneEntityList.toArray(new DoneEntity[doneEntityList.size()]);
+        this.datas = doneList.toArray(new Done[doneList.size()]);
     }
 
     @Override
